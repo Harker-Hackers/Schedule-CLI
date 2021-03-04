@@ -1,6 +1,6 @@
 Gem::Specification.new do |specs|
     specs.name        = 'Harker-Schedule'
-    specs.version     = '1.0.0'
+    specs.version     = '1.0.1'
     specs.date        = '2021-03-03'
     specs.summary     = "Harker Schedule CLI"
     specs.description = "Get school timings on your command line."

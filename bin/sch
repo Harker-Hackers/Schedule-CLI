@@ -12,7 +12,7 @@ def make_req url
     return JSON.parse res.body
 end
 
-data = (make_req "http://127.0.0.1:5000/v2/current/block")["data"]
+data = (make_req "http://harker-schedule.herokuapp.com/v2/current/block")["data"]
 
 puts
 
