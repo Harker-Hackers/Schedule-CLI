@@ -1,0 +1,26 @@
+require "json"
+require "uri"
+require "net/http"
+require 'colorize'
+
+def make_req url
+    uri = URI url
+    res = Net::HTTP.start uri.host, uri.port do |http|
+        req = Net::HTTP::Get.new uri
+        http.request req
+    end
+    return JSON.parse res.body
+end
+
+data = (make_req "http://127.0.0.1:5000/v2/current/block")["data"]
+
+puts
+
+if data == nil
+    puts "School's out!".green
+else
+    puts "Current period: #{data["block"].green.gsub "_", " "}"
+    puts "Time left: #{data["time_left"].green}"
+end
+
+puts
